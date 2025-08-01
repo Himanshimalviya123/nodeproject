@@ -1,0 +1,1 @@
+const sturoutes=require("../routes/sturoutes")
