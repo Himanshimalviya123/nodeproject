@@ -1,31 +1,54 @@
-
-
 import { useState } from "react";
+import axios from "axios";
+import backendurl from "../../../backend/utils/backendurl";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+// import { ToastContainer, toast } from 'react-toastify'; 
+
 const Insert=()=>{
-    const [input,setInput]=useState({})
-    const handleinput=(e)=>{
-        let value=target.value
-        let name=target.name
-        setInput({...input,[name]:value})
-        console.log(input);
-        
+    const [input,setInput]=useState({});
+    const handleInput=(e)=>{
+        let name=e.target.name;
+        let value=e.target.value;
+        setInput(Values=>({...Values,[name]:value}));
+        console.log(input)
     }
-    const handlesubmit=(e)=>{
-       e.preventDefault();
-    //    console.log("form submitted",input);
-    let api=`${backendurl}/student/save`;
-       
-    }
+    const handleSubmit=async(e)=>{
+        e.preventDefault();
+        let api=`${backendurl}student/save`;
+        const response=await axios.get(api,input);
+        console.log(response.data);
+        toast.success("data saved!!")
+}
     return(
         <>
-        <h1>welcome to insert page!!!!!!!!!!</h1>
-        <form action="/save" method="post" id="form">
-        enter name:- <input type="text" name="name" onChange={handleinput}/><br/>
-        enter rollno:- <input type="text" name="rno" onChange={handleinput}/><br/>
-        enter city:- <input type="text" name="city" onChange={handleinput}/><br/>
-        enter fees:- <input type="text" name="fees" onChange={handleinput}/><br/>
-        <button onClick={handlesubmit}>save</button>
-        </form>
+         <h3 className="h33"> Insert Student Record page!!!</h3>
+        
+
+    <Form id="form">
+      <Form.Group className="mb-3" >
+        <Form.Label>Enter Name</Form.Label>
+        <Form.Control type="text" name="name" onChange={handleInput}/>
+     </Form.Group>
+
+      <Form.Group className="mb-3" >
+        <Form.Label>Enter Rollno</Form.Label>
+        <Form.Control type="text" name="rollno" onChange={handleInput}/>
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label>Enter City</Form.Label>
+        <Form.Control type="text" name="city" onChange={handleInput}/>
+      </Form.Group>
+      <Form.Group className="mb-3" >
+        <Form.Label>Enter Fees</Form.Label>
+        <Form.Control type="text"  name="fees" onChange={handleInput}/>
+      </Form.Group>
+      
+      <Button variant="primary" type="submit" onClick={handleSubmit}>
+        Submit
+      </Button>
+    </Form>
+    {/* <ToastContainer/> */}
         </>
     )
 }

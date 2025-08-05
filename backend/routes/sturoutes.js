@@ -1,6 +1,13 @@
+
 const express=require("express");
 const route=express.Router();
-const stucontroller=require("../controller/stucontroller");
+const stuControll=require("../controller/stucontroller");
 
-route.post("/save",stucontroller.stusave)
+route.post("/save",stuControll.stuSave);
+route.get("/display",stuControll.stuDisplay);
+route.get("/update",stuControll.stuUpdate);
+route.delete("/delete/:id",stuControll.dataDelete);
+route.get("/edit",stuControll.dataShow);
+route.post("/editsave",stuControll.editSave);
+
 module.exports=route;
