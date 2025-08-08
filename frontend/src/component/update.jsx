@@ -1,6 +1,6 @@
 import Table from 'react-bootstrap/Table';
 import { useState,useEffect } from 'react';
-import backendurl from '../../../backend/utils/backendurl';
+import backendurl from '../utils/backendurl';';
 import axios from 'axios';
 // import { ToastContainer, toast } from 'react-toastify'; 
 import { useNavigate } from 'react-router';

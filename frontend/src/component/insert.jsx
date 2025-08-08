@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import backendurl from "../../../backend/utils/backendurl";
+import backendurl from "../utils/backendurl";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 // import { ToastContainer, toast } from 'react-toastify'; 
@@ -15,10 +15,10 @@ const Insert=()=>{
     }
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        let api=`${backendurl}student/save`;
+        let api=`${backendurl}students/save`;
         const response=await axios.get(api,input);
         console.log(response.data);
-        toast.success("data saved!!")
+        // toast.success("data saved!!")
 }
     return(
         <>

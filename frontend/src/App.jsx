@@ -2,11 +2,11 @@ import {BrowserRouter ,Routes,Route} from "react-router-dom"
 import Layout from "../layout";
 import Home from "./component/home";
 import Insert from "./component/insert";
-import Display from "./component/display";
 import Update from "./component/update";
 import Search from "./component/search";
 import Contact from "./component/contact";
 import Editdata from "./component/pages/edit ";
+import Display from "./component/display";
 
 const App=()=>{
   return(

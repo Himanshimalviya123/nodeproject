@@ -1,36 +1,32 @@
 import Table from 'react-bootstrap/Table';
 import { useState,useEffect } from 'react';
-import backendurl from '../../../backend/utils/backendurl';
+import backendurl from '../utils/backendurl';
 import axios from 'axios';
 
 const Display=()=>{
   const [mydata,setMydata]=useState([]);
-  const loadData=async()=>{
-    let api=`${backendurl}student/display`;
-    const response=await axios.get(api);
-    setMydata(response.data);
-    console.log(response.data);
-  }
+const loadData = async () => {
+  let api =`${backendurl}students/display`; // Correct route
+  const response = await axios.get(api);
+  console.log(response.data);
+  setMydata(response.data) ;
+}
 
   useEffect(()=>{
     loadData();
   },[])
 
   let sno=0;
-  const ans=mydata.map((key)=>{
+  const answer =mydata.map((key) => {
     sno++;
-    return(
-      <>
-      <tr>
-        <td>{sno}</td>
-        <td>{key.name}</td>
-        <td>{key.rollno}</td>
-        <td>{key.city}</td>
-        <td>{key.fees}</td>
-      </tr>
-      </>
-    )
-  })
+  <tr>
+    <td>{sno}</td>
+    <td>{key.name}</td>
+    <td>{key.rollno}</td>
+    <td>{key.city}</td>
+    <td>{key.fees}</td>
+  </tr>
+});
     return(
         <>
          <h3 className="h33">Student Data display page!!!</h3>
@@ -45,10 +41,13 @@ const Display=()=>{
         </tr>
       </thead>
       <tbody>
-         {ans}
+         {answer}
       </tbody>
       </Table>
         </>
     )
 }
 export default Display;
+
+
+

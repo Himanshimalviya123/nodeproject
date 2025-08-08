@@ -4,7 +4,7 @@ const stuRoute=require("./routes/sturoutes");
 const mongoose=require("mongoose");
 const bodyparser=require("body-parser");
 const cors=require("cors");
-mongoose.connect("mongodb://localhost:27017/predb").then(()=>{
+mongoose.connect("mongodb://localhost:27017/himanshidb").then(()=>{
     console.log("Database connected successfully");
 })
     

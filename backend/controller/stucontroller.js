@@ -44,8 +44,8 @@ const editSave=async(req,res)=>{
 module.exports={
     stuSave,
     stuDisplay,
-    stuUpdate,
-    dataDelete,
-    dataShow,
-    editSave
+    // stuUpdate,
+    // dataDelete,
+    // dataShow,
+    // editSave
 }

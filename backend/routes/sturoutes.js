@@ -5,6 +5,7 @@ const stuControll=require("../controller/stucontroller");
 
 route.post("/save",stuControll.stuSave);
 route.get("/display",stuControll.stuDisplay);
+
 route.get("/update",stuControll.stuUpdate);
 route.delete("/delete/:id",stuControll.dataDelete);
 route.get("/edit",stuControll.dataShow);
