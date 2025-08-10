@@ -3,7 +3,7 @@ import axios from "axios";
 import backendurl from "../utils/backendurl";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-// import { ToastContainer, toast } from 'react-toastify'; 
+
 
 const Insert=()=>{
     const [input,setInput]=useState({});
@@ -48,7 +48,7 @@ const Insert=()=>{
         Submit
       </Button>
     </Form>
-    {/* <ToastContainer/> */}
+
         </>
     )
 }
