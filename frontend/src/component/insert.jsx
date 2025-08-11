@@ -3,8 +3,6 @@ import axios from "axios";
 import backendurl from "../utils/backendurl";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
-
 const Insert=()=>{
     const [input,setInput]=useState({});
     const handleInput=(e)=>{
@@ -23,15 +21,12 @@ const Insert=()=>{
     return(
         <>
          <h3 className="h33"> Insert Student Record page!!!</h3>
-        
-
     <Form id="form">
       <Form.Group className="mb-3" >
         <Form.Label>Enter Name</Form.Label>
         <Form.Control type="text" name="name" onChange={handleInput}/>
      </Form.Group>
-
-      <Form.Group className="mb-3" >
+<Form.Group className="mb-3" >
         <Form.Label>Enter Rollno</Form.Label>
         <Form.Control type="text" name="rollno" onChange={handleInput}/>
       </Form.Group>
@@ -43,12 +38,10 @@ const Insert=()=>{
         <Form.Label>Enter Fees</Form.Label>
         <Form.Control type="text"  name="fees" onChange={handleInput}/>
       </Form.Group>
-      
       <Button variant="primary" type="submit" onClick={handleSubmit}>
         Submit
       </Button>
     </Form>
-
         </>
     )
 }
